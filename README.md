@@ -1,36 +1,37 @@
 
 ```markdown
-# Bridging the Semantic Gap: RL-Driven Adversarial Sarcasm Detection 🤖💬
+# Bridging the Semantic Gap: RL-Driven Adversarial Sarcasm Detection 
 
-[cite_start]This project implements an **Asymmetric Adversarial Framework** to resolve "Sarcasm Blindness" in sentiment classifiers[cite: 1, 7]. [cite_start]By utilizing a Reinforcement Learning (RL) agent as an intelligent "vaccine," we harden models against semantic incongruity where emojis invert the textual meaning[cite: 9, 20].
+This project implements an **Asymmetric Adversarial Framework** to resolve "Sarcasm Blindness" in sentiment classifiers.By utilizing a Reinforcement Learning (RL) agent as an intelligent "vaccine," we harden models against semantic incongruity where emojis invert the textual meaning.
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 Project_Root/
 │
 ├── saved_models/                     # [Auto-Created] Directory for models
 │   ├── distilbert-base-uncased/      # [CRITICAL] Local BERT model folder
-│   ├── baseline_mlp.pth              # Saved checkpoints for the victim model
-[cite_start]│   ├── agent_actor.pth               # Actor network for the RL agent [cite: 106]
-[cite_start]│   ├── agent_critic.pth              # Critic network for the RL agent [cite: 106]
-│   └── robust_mlp_model.pth          # Final hardened model
+│   ├── baseline_mlp.pth              # Saved checkpoints
+│   ├── agent_actor.pth
+│   ├──  agent_critic.pth
+│   └── robust_mlp_model.pth
 │
-[cite_start]├── train.tsv                         # [REQUIRED] Training dataset (SST-2) [cite: 45]
-[cite_start]├── test.tsv                          # [REQUIRED] Test dataset (SST-2) [cite: 45]
+├── train.tsv                         # [REQUIRED] Training dataset (SST-2)
+├── test.tsv                          # [REQUIRED] Test dataset (SST-2)
 │
-├── visualization_utils.py            # [REQUIRED] Module for plotting logs and matrices
-[cite_start]├── DM_RL_Emoji.py                    # Main script for MLP & RL Agent Experiments [cite: 49]
-[cite_start]├── DM_CV_Emoji.py                    # Main script for Logistic Regression Experiments [cite: 391]
-└── README.md                         # This documentation
-
+├── visualization_utils.py            # [REQUIRED] Visualization module
+├── saved_models                 # Script to download BERT,RL agent,MLP model locally…… we trained before(of course you can change codes and retrain a new one sir)
+├── DM_RL_Emoji.py                    # Main script for MLP Experiment
+├── DM_CV_Emoji.py                     # Main script for Logistic Regression Experiment
+│
+└── README1.txt                        # This file
 ```
 
 ---
 
-## 📊 Dataset & Data Source
+## Dataset & Data Source
 
 This project utilizes the **Stanford Sentiment Treebank (SST-2)** benchmark.
 
@@ -58,7 +59,7 @@ This project utilizes the **Stanford Sentiment Treebank (SST-2)** benchmark.
 
 ---
 
-## 🌟 Key Features
+##  Key Features
 
 * 
 **Asymmetric Feature Engineering**: The Attacker (RL Agent) utilizes high-dimensional **DistilBERT** embeddings, while attacking simpler **TF-IDF** based models to simulate black-box scenarios.
@@ -79,7 +80,7 @@ This project utilizes the **Stanford Sentiment Treebank (SST-2)** benchmark.
 
 ---
 
-## 🛠️ Mathematical Foundation
+##  Mathematical Foundation
 
 ### 1. The Reward Function
 
@@ -112,7 +113,7 @@ $$\mathcal{L}_{Robust} =
 
 ---
 
-## 📈 Performance Breakthrough
+##  Performance Breakthrough
 
 Adversarial training dramatically reduces "Sarcasm Blindness," evidenced by the leap in Negative Recall.
 
@@ -136,7 +137,7 @@ Adversarial training dramatically reduces "Sarcasm Blindness," evidenced by the 
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 1. **Install Dependencies**:
 ```bash
@@ -151,7 +152,7 @@ pip install transformers torch scikit-learn numpy pandas matplotlib
 
 
 
-## 📜 License
+##  License
 
 Distributed under the **MIT License**.
 
